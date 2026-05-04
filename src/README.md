@@ -19,7 +19,7 @@
 	<a href="https://github.com/JayantGoel001/JayantGoel001.github.io">
 		<img src="screenshots/icon.png" alt="Logo" width="80" height="80"/>
 	</a>
-	<h3 align="center">Sakshi Singh (S-dev-coder)'s Personal Portfolio</h3>
+	<h3 align="center">Sakshi Kumari (S-dev-coder)'s Personal Portfolio</h3>
 	<p align="center">
 		This is the source code for my Personal Portfolio.
 		<br/>
