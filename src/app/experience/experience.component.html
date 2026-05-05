@@ -1,0 +1,54 @@
+<section class="section pointer" id="experience">
+    <div class="container">
+        <div class="row justify-content-center txt-bg txt-bg-experience">
+            <div class="col-lg-6 pointer">
+                <div class="wow fadeIn section-title text-center mb-4 pb-2">
+                    <div class="mb-5 pb-3"><i class="fas fa-briefcase h1 text-white"></i></div>
+                    <h2 class="h3 font-weight-bold">Work Experience</h2>
+                    <p class="text-muted mx-auto mb-0 mt-4 para-desc">Delivering excellence through technical leadership and full-stack innovation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-11 mx-auto">
+                <div class="experience-timeline">
+                    <div *ngFor="let exp of experienceData" 
+                         class="experience-item wow fadeInUp"
+                         [attr.data-wow-delay]="exp.delay">
+                        <div class="experience-content">
+                            <div class="experience-header d-flex align-items-start mb-4">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap">
+                                        <div>
+                                            <h3 class="h3 font-weight-bold mb-1 text-white tracking-tight">{{exp.position}}</h3>
+                                            <h4 class="text-custom mb-0 font-weight-bold">{{exp.company}}</h4>
+                                        </div>
+                                        <div class="text-md-right mt-3 mt-md-0">
+                                            <span class="badge-date">{{exp.duration}}</span>
+                                            <p class="small text-muted-custom mt-2 mb-0"><i class="fas fa-map-marker-alt mr-2"></i> {{exp.location}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="company-logo-container">
+                                    <img [src]="'assets/images/' + exp.logo"
+                                         [alt]="exp.company"
+                                         class="company-logo">
+                                </div>
+                            </div>
+                            <div class="experience-body">
+                                <p class="experience-summary mb-4">{{exp.description}}</p>
+                                <ul class="experience-details">
+                                    <li *ngFor="let detail of exp.details">
+                                        <i class="fas fa-arrow-right mt-1"></i>
+                                        <span>{{detail}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

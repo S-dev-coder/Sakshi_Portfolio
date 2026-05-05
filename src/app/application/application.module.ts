@@ -15,6 +15,7 @@ import {ContactComponent} from "../contact/contact.component";
 import {SocialComponent} from "../social/social.component";
 import {FooterComponent} from "../footer/footer.component";
 import {WaifuComponent} from "../waifu/waifu.component";
+import {ExperienceComponent} from "../experience/experience.component";
 import {RouterModule, Routes} from "@angular/router";
 
 const routes: Routes = [{ path: '', component: ApplicationComponent }];
@@ -32,7 +33,8 @@ const routes: Routes = [{ path: '', component: ApplicationComponent }];
 		ContactComponent,
 		SocialComponent,
 		FooterComponent,
-		WaifuComponent
+		WaifuComponent,
+		ExperienceComponent
 	],
 	imports: [
 		RouterModule.forChild(routes),

@@ -1,32 +1,45 @@
-<section class="section pointer" id=portfolio>
-    <div class=container>
+<section class="section pointer" id="portfolio">
+    <div class="container">
         <div class="row justify-content-center txt-bg txt-bg-portfolio">
-            <div class=col-lg-6>
+            <div class="col-lg-6 pointer">
                 <div class="wow fadeIn section-title text-center mb-4 pb-2">
-                    <div class="mb-5 pb-3"> <i class="far fa-clone h1 text-muted"></i></div>
-                    <h2 class="h3 font-weight-bold">My Portfolio</h2>
-                    <p class="text-muted mx-auto mb-0 mt-4 para-desc">Sample of some of my projects</p>
+                    <div class="mb-5 pb-3"><i class="far fa-clone h1 text-muted"></i></div>
+                    <h2 class="h3 font-weight-bold">Recent Projects</h2>
+                    <p class="text-muted mx-auto mb-0 mt-4 para-desc">Explore a selection of my development work demonstrating technical skills and creative problem-solving.</p>
                 </div>
             </div>
         </div>
-        <div class="row container-grid mt-4 pt-2">
-            <div *ngFor="let project of portfolioData" class="wow {{project['animationClass']}} col-lg-4 spacing"
-                [attr.data-wow-delay]="[project['delay']]"><ng-template #title><strong> <em>Click To Checkout My
-                            Code.</em> </strong></ng-template><a class="item-box m-2"
-                    [placement]="[project['placement']]" [ngbTooltip]="title" rel="noreferrer"
-                    aria-label="project(opens in a new tab)"
-                    href="https://github.com/S-dev-coder/{{project['project']}}" target="_blank"><img
-                        class="item-container img-fluid mx-auto"
-                        src="assets/images/portfolio/{{project['project']}}.webp"
-                        alt="{{project['project'].replaceAll('-',' ')}}"
-                        title="{{project['project'].replaceAll('-',' ')}}" width="698" height="543" loading="lazy">
-                    <div class=item-mask>
-                        <div class="item-caption text-white text-center">
-                            <h3 class="h5">{{project['project'].replaceAll('-',' ')}}</h3>
-                            <p class=text-uppercase>{{project['description']}}</p>
+
+        <div class="row">
+            <div *ngFor="let project of portfolioData.projects" 
+                 class="col-lg-4 col-md-6 mb-5 wow {{project.animationClass}}" 
+                 [attr.data-wow-delay]="project.delay">
+                <div class="card project-card">
+                    <div class="project-img-container">
+                        <img src="assets/images/portfolio/{{project.image}}" 
+                             class="card-img-top project-img" 
+                             alt="{{project.project}}"
+                             onerror="this.src='assets/images/portfolio/Dummy_Mern.webp'">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="font-weight-bold">{{project.project}}</h4>
+                        <p class="description">{{project.description}}</p>
+                        
+                        <div class="tech-stack">
+                            <span *ngFor="let tech of project.techStack" class="badge-tech">{{tech}}</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a [href]="project.live" target="_blank" class="link-item">
+                                <i class="fas fa-external-link-alt"></i> <span>Live Demo</span> <i class="fas fa-arrow-right ml-1 small"></i>
+                            </a>
+                            <a [href]="project.github" target="_blank" class="link-item">
+                                <i class="fab fa-github"></i> <span>Source Code</span>
+                            </a>
                         </div>
                     </div>
-                </a></div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

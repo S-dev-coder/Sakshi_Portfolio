@@ -3,13 +3,13 @@ import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@an
 declare var data : any;
 
 @Component({
-	selector: 'app-portfolio',
-	templateUrl: './portfolio.component.html',
+	selector: 'app-experience',
+	templateUrl: './experience.component.html',
 	changeDetection: ChangeDetectionStrategy.OnPush,
-	styleUrls: ['./portfolio.component.css']
+	styleUrls: ['./experience.component.css']
 })
-export class PortfolioComponent implements OnInit {
-	public portfolioData = data['Portfolio'];
+export class ExperienceComponent implements OnInit {
+	public experienceData = data['Experience'];
 
 	constructor(private changeDetectorRef: ChangeDetectorRef) {
 		changeDetectorRef.detach();
